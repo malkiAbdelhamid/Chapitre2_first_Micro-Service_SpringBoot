@@ -1,0 +1,148 @@
+get http://localhost:8081/clients/
+
+get http://localhost:8081/clients/1
+
+get http://localhost:8081/clients/1/lesComptes
+
+get http://localhost:8081/comptes
+
+get  http://localhost:8081/comptes/1
+
+get http://localhost:8081/comptes/1/client
+
+
+
+post http://localhost:8081/clients
+
+Headers: Content-Type ==> application/json
+
+Body: raw 
+{
+    "nom": "samir",
+    "sexe": "Homme",
+    "email": "k.samir@gamil.com",
+    "dateNaissance":  "1995-10-20"
+}
+
+
+
+post http://localhost:8081/comptes
+
+Headers: Content-Type ==> application/json
+
+Body: raw 
+{
+    "login": "a.malki",
+    "password":  "aaa",
+     "dateCreation": "2022-01-01",
+     "client": "http://localhost:8081/clients/1"
+}
+
+
+
+
+
+
+Put http://localhost:8081/clients/2
+
+Headers: Content-Type ==> application/json
+
+Body: raw 
+{    
+    "nom":"fouad"    
+}
+
+
+
+Put http://localhost:8081/clients/2
+
+Headers: Content-Type ==> application/json
+
+Body: raw 
+{
+    "nom":"fouad",
+    "dateNaissance":"1995-10-10"
+}
+
+
+
+
+Patch http://localhost:8081/clients/1
+
+Headers: Content-Type ==> application/json
+
+Body: raw 
+{
+   "nom":"badr-dinne"
+}
+
+
+delete http://localhost:8081/clients/3
+
+
+GET  http://localhost:8081/clients/search/findClientsByNom?nom=ali 
+
+
+
+get http://localhost:8081/clients/1?projection=pr1
+
+
+
+GET http://localhost:8081/client-api/client/all
+
+ajouter le @JsonIgnore
+
+GET http://localhost:8081/client-api/client/all
+
+
+
+GET http://localhost:8081/client-api/client/1
+
+GET http://localhost:8081/client-api/client?id=1
+
+
+
+POST http://localhost:8081/client-api/client
+
+Headers: Content-Type ==> application/json
+
+Body: raw 
+{
+    "nom":"karim",
+    "sexe":"Homme",
+    "email":"k.samir@gamil.com",
+    "dateNaissance":"1995-10-20"
+}
+
+
+
+POST  http://localhost:8081/client-api/compte
+
+Headers: Content-Type ==> application/json
+
+Body: raw 
+
+{
+    "login":" a.malki",
+    "password": "aaa",
+     "idClient":"2"
+}
+
+
+
+
+Put http://localhost:8081/client-api/client/1
+Headers: Content-Type ==> application/json
+
+Body: raw 
+
+{
+    "nom":"souad",
+    "sexe":"Femme",
+    "email":"k.samir@gamil.com",
+    "dateNaissance":"1995-10-20"
+}
+
+
+
+Delete http://localhost:8081/client-api/client/1
